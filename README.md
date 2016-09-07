@@ -1,7 +1,7 @@
 # React ATM Simulator
 A basic ATM simulator
 
-![alt tag](https://raw.githubusercontent.com/rolandaugusto/react-atm-simulator/screenshots/home.png)
+![alt tag](https://raw.githubusercontent.com/rolandaugusto/tree/master/react-atm-simulator/screenshots/home.png)
 
 This project uses the webpack-express-boilerplate as boilerplate.
 
