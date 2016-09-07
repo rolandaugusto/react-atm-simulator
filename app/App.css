@@ -1,0 +1,138 @@
+body {
+    background: #f2f2f2 scroll url(./img/wall.jpg) repeat 0 0;
+    margin: 0;
+}
+.roundCorner {
+    border-radius: 10px;
+}
+.app {
+    composes: roundCorner;
+    width: 1024px;
+    height: 550px;
+    margin: 20px auto 0;
+    padding-top: 20px;
+}
+.text {
+    color: white;
+    font-family: monospace;
+    font-size: 24px;
+}
+.screen {
+    composes: roundCorner;
+    composes: text;
+    background-color: black;
+    height: 500px;
+    text-align: center;
+    display: table;
+    position: relative;
+    float: left;
+    width: 654px;
+    margin-right: 10px;
+    border: 3px solid #353739;
+}
+.bap {
+    display: table-cell;
+    vertical-align: middle;
+}
+.shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+}
+.redText {
+    color: red;
+}
+.basicInput {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+.input {
+    composes: basicInput;
+}
+.button {
+    composes: basicInput;
+    background-color: transparent;
+    color: white;
+}
+.buttonWithMarginRight {
+    composes: button;
+    margin-right: 10px;
+}
+.card {
+    display: inline-block;
+    background-color: transparent;
+    width: 28%;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition-property: perspective;
+    transition-duration: 0.5s;
+    perspective: 300px;
+}
+.card:hover .cardImage {
+    transform: rotateY(0deg);
+}
+.cardImage {
+    max-width: 100%;
+    transform: rotateY(30deg);
+    transition-property: transform;
+    transition-duration: 0.5s;
+}
+.buttonBack {
+    composes: button;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.buttonAbort {
+    composes: button;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.buttonAmount {
+    composes: button;
+    width: 150px;
+    margin-bottom: 20px;
+}
+.panel {
+    width: 150px;
+    margin-top: 20px;
+}
+
+.panelLeft {
+    composes: panel;
+    float: left;
+    padding-left: 5px;
+}
+.panelRight {
+    composes: panel;
+    float: right;
+    text-align: right;
+    padding-right: 5px;
+}
+.hidden {
+    display: none;
+}
+
+
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

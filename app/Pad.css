@@ -1,0 +1,108 @@
+.padWrapper {
+    height: 500px;
+    float: left;
+}
+.cardHolder {
+    composes: text from "./App.css";
+    width: 354px;
+    height: 235px;
+    padding: 10px;
+    box-sizing: border-box;
+    perspective: 500px;
+}
+.pad {
+    background: transparent scroll url(./img/pad.png) no-repeat 0 0;
+    width: 354px;
+    height: 300px;
+    background-size: 100%;
+    position: relative;
+}
+.card {
+    max-width: 99%;
+    animation: rotate 1s both;
+    position: relative;
+    top: -6px;
+}
+
+.cardReader {
+    position: absolute;
+    background-color: #B0B6BB;
+    width: 240px;
+    height: 127px;
+    border-radius: 10px;
+    left: 15%;
+    text-align: center;
+}
+.cardReader:after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    border-bottom: 15px solid #32d38e;
+    left: 37px;
+    top: 50px;
+}
+.cardReaderIdle:after {
+    animation: blink 1s infinite;
+}
+
+.cardReaderLabel {
+    display: block;
+    background-color: #0d3349;
+    padding: 5px;
+}
+.numbers {
+    position: absolute;
+    width: 210px;
+    height: 214px;
+    top: 28px;
+    left: 28px;
+    margin: -5px -4px;
+}
+.padButton {
+    background-color: transparent;
+    width: 62px;
+    height: 47px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.number {
+    composes: padButton;
+    margin: 5px 4px;
+    padding: 0;
+}
+.number0 {
+    composes: number;
+    margin-left: 74px;
+}
+.number:hover,
+.cta:hover {
+    border-color: cyan;
+}
+.cta {
+    composes: padButton;
+    margin-bottom: 8px;
+}
+.ctas {
+    position: absolute;
+    width: 68px;
+    height: 214px;
+    top: 30px;
+    right: 25px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateZ(0deg) scale(0.6);
+    }
+    to {
+        transform: rotateX(69deg) rotateZ(90deg) scale(1);
+    }
+}
+@keyframes blink {
+    from {
+        border-color: #0eff2e;
+    }
+    to {
+        border-color: #32d38e;
+    }
+}
